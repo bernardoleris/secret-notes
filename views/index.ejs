@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir senha</title>
+    <base href="/">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="password-form">
+        <h2>Por favor, insira a senha:</h2>
+        <% if (error && num > 0) { %>
+            <p class="error-message"><%= error %></p>
+        <% } %>
+        <form action="/" method="POST">
+            <input type="password" name="password" class="password-input" placeholder="Senha" required>
+            <button type="submit" class="submit-button">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

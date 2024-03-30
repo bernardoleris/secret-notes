@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Notes</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="secret">Secret Notes</h1>
+        <p class="intro" >Faça aqui sua anotação!</p>
+        <div class="insert">
+            <form class="form" action="/submit" method="POST">
+                <label for="title">Título:</label>
+                <input type="text" id="title" name="title" class="input-text" placeholder="Digite aqui...">
+                <label for="title">Anotação:</label>
+                <input type="text" id="post" name="post" class="input-text" placeholder="Digite aqui...">
+                <input class="input" type="submit" value="Registrar">
+            </form>
+        </div>
+        <div class="posts">
+            <h2 class="notas">Anotações:</h2>
+            <% if (titles.length === 0) { %>
+                <p>Nenhuma anotação disponível.</p>
+            <% } else { %>
+                <% for (let i = 0; i < titles.length; i++) { %>
+                    <h3><%= titles[i] %></h3>
+                    <p><%= posts[i] %></p>
+                    <div class="button">
+                        <form class="form" action="/edit/<%= i %>" method="GET">
+                            <input name="password" class="input" type="submit" value="Editar">
+                        </form>
+                        <!-- Formulário para exclusão -->
+                        <form class="form" action="/delete/<%= i %>" method="POST">
+                            <input class="input" type="submit" value="Excluir">
+                        </form>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
