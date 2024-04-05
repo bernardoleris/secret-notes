@@ -1,4 +1,5 @@
 ![password-page](./deploy-img/password-page.png)
+![password-page](./deploy-img/password-page2.png)
 ![notes-page](./deploy-img/notes-page.png)
 ![notes-page2](./deploy-img/notes-page2.png)
 ![edit-page](./deploy-img/edit-page.png)

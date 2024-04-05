@@ -50,8 +50,8 @@ app.post("/", (req, res)=>{
         userAutorizado = false;
         num = 0;
     }else{
-        res.render("index.ejs", { error: "Senha incorreta. Tente novamente.", num: num });
         num++;
+        res.render("index.ejs", { error: "Senha incorreta. Tente novamente.", num: num });
     }
 });
 
